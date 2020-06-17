@@ -1,0 +1,25 @@
+
+
+A full binary tree is a binary tree in which every node other than the leaves has two children.
+
+A perfect binary tree is a full binary i which all leaves are at the same depth, and in which
+every parent has two children.
+
+A complete binary tree is a binary tree in which every level, except possibily the last,
+is completely filled, and all nodes are as far left as possible.
+
+A perfect binary tree of height h contains exactly 2 ^ (h + 1) nodes, of which 2 ^h are leaves.
+
+A complete binary tree on n nodes has  height log n.
+
+A left-skewed tree is a tree in which no node has a right child.
+A right-skewed tree is a tree in which no node has a left child.
+In either case, we refer to binary tree as being skewed.
+
+A key computation on a binary tree is traversing.
+
+there are 3 types of traversing:
+    inorder (left, value, right)
+    preorder (value, left, right)
+    inorder (right, left, value)
+

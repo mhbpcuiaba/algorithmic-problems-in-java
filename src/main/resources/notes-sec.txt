@@ -1,0 +1,20 @@
+
+
+Principle of Secure Coding
+
+    cohesion, specific function for specific needs to disambiguate
+
+    * Make interfaces simple even when for internal use only.
+    * Give useful error messages, and describe the error precisely
+        - For those caused by internal inconsistencies, name the routine to help'whoever debugs it
+        - In general, it's better to report the error to the caller, giving enough information so
+          the caller can decide how to handle the error.
+    * Pure function
+        - no side effects to the parameters(whenever is possible)
+    * CHeck functions parameters refers to a valid data structure
+
+
+
+    e melhor falhar doque continuar trabalhnado errado
+
+

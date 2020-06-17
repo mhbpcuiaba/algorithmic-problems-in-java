@@ -1,0 +1,28 @@
+
+1) Dijkstra can handle positive edge weights, Bellman-Ford algorithm can have negative wrights as well
+2) Defines the shortest paths from a saourcfe to all teh other nodes.
+3) This is asymptotically the fastes known single-source shortes-path algorithm for arbritary directeds graphs with unbounded non-negative weights
+4) Dijkstra's algorithm time complexity is O(V * Log V * E)
+5) Dijkstra's algorithm is a greedy one: it triews to find the global optimum with the help pfl ocal minimum -> it turns out to be good.
+6) It is greedy algorithm, cause on every iteration we want to find the minimum distance to the next vertexzx possible -> appropriate data structures:
+    heaps( binary or fibonacci) or in general a priority queue
+    * it tries to find the global optimum with the help of local minimum and fortunately it turns out to be good.
+
+
+7) Picking the proper data structures are very useful because we are able to stop for example we
+ can boost the sdijkstra's algorithm to end up with a linear logarithmic complexity
+
+
+
+
+#1# Initialization phase: distance from source is 0, because that is the starting point.
+    All the other nodes distances are infinity because we do not know the distacnes in advacne
+
+#2# use data streucture queue (pririoty queue)
+
+
+
+Bellman and Ford is slower tha\n dijstra oweer is more robust since it hanldes negative edges
+
+Dijkstra relaxes a single edge at the same time
+Bellman-Ford relaxes a all edges at the same time. O (V * E)

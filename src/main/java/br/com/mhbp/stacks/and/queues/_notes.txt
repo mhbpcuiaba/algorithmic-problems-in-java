@@ -1,0 +1,78 @@
+
+
+FIFO vs LIFO
+
+parses typically benefits from a stack.
+stacks support last-in, first-out semantics for inserts and deletes,
+whereas queues are first-in, first-out.
+
+stacks and queues are usually building blocks in a  solution to a complex problem
+
+stacks support push and pop.
+
+When the stack is implemented using a linked list these operations have O(1) time complexity.
+If it is implemented using an array, there is maximum number of entries it can have-
+push and pop are still O(1).
+
+If the array is dynamically resized, the amortized time for both push and pop is O(1).
+
+A stack can support additional operations such as peek, which returns the top of the stack without popping it.
+
+first-out semantics of a stack make it very useful for creating reverse iterators for sequences
+which are stored in a way that would make it difficult or impossible to step back from a given element.
+
+
+Returning null + removing operations: poll() docs
+
+Throwing exception + removing operations: pop()docs
+
+the preferred way to represent stacks in Java is via the Deque interface.
+
+The ArrayDeque class is a resizable array that implements this interface,
+and  provides O(1) time stack (and queue) functionality.
+
+It is efficient, and its use is considered as a best practice.
+
+The key stack-related methods in the Deque interface are push(42), peek(), and pop().
+
+The Deque methods addFirst(42), peekFirst(42), peekFirst() and removeFirst()
+are identical to push(42), peek(), and pop().
+
+* push(e)
+    throw an IllegalStateException if the capacity limit us exceed, or a NullPointerException
+    if the element being inserted is null.
+
+    LinkedList has no capacity limit and allows for null entries.
+
+* peek()
+
+
+* pop()
+
+
+A queue supports two basic operations -- enqueue and dequeue. if you try to remove
+an element form empty queue you will either get null or exception.
+
+first-in, first-out
+A queue can be implemented using a linked list or array
+
+peekFirst
+
+
+A deque, also sometimes called a double-ended queue, is a doubly linked list
+in which all insertions to the front is commonly called a push, and an insertion
+to the back is commonly called inject.
+
+A deletion from the front is commonly called a pop, and a deletion from the back is
+commonly called an eject.
+
+queues are ideal when order needs to be preserved
+
+The preferred way to manipulate queues is via the Deque interface.
+
+The ArrayDeque class is a resizable array that implements this interface O(1) amortized
+
+Its use is considered best practices.
+
+
+

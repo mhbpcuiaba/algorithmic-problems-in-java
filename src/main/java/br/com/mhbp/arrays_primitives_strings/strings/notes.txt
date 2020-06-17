@@ -1,0 +1,11 @@
+
+
+The key methods on strings are charAt(1), compareTo("foo"), concat("bar"), contains("aba", endsWith("Xy"),
+indexOf("needle"), indexOf("needle",12), indexOf('A'), indexOf('B', offset), lastIndexOf("needle"), length(),
+replace('a', 'A'), replace("a", "A"); "a;d;f".split(";"), startsWith, substring, toCharArray, toLowerCase, toUpperCase
+
+    The substring() method is particularly important, and also easy t oget wrong,
+    since it has two variants: one takes a start and end index
+    ( the returned substring includes the character at start but not the character at end).
+
+The methods in StringBuilder are append(), charAt(), delete(), deleteCharAt(), insert, replace and toString

@@ -1,0 +1,11 @@
+
+
+Predicate: it takes an object and return true or false.
+
+Consumer:  it takes an object and return void,
+  with the assumption that you gonna to do some action on the
+  object received on the request
+
+Function: it takes an object and return another any object.
+
+Supplier: it takes nothing and return an object

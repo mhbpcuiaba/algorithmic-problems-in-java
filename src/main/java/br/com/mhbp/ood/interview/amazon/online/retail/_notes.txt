@@ -1,0 +1,22 @@
+
+
+
+We have four main Actors in our system:
+
+Admin:
+
+Mainly responsible for account management and adding or modifying new product categories.
+
+Guest:
+
+All guests can search the catalog, add/remove items to the shopping cart,
+as well as become registered members.
+
+Member:
+
+Members can perform all the activities that guests can, in addition to which,
+they can place orders and add new products to sell.
+
+System:
+
+Mainly responsible for sending notifications for orders and shipping updates.

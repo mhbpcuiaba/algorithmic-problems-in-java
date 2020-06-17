@@ -1,0 +1,12 @@
+heap supports O(log n) fro insertion,
+O(1) for max/min element
+O(log n) for deletion
+O(n) to search for an arbitrary key
+
+A heap is sometimes referred to as a priority queue cause it behaves like a queue,
+with one difference: each element has a "priority" associated with it,
+and deletion removes the element with highest priority.
+
+
+the PriorityQueue key methods are add("hi"), peek(), poll(), the latter two returning null when the heap is empty.
+It is possible to specify a custom comparator in the heap constructor.

@@ -1,0 +1,49 @@
+
+
+Ordered sequences, including dynamically resized array and doubly linked list implement the interface List.
+
+add(1a), add(1,2,3), addAll(list), addAll(0, list), clear(), contains(2, 71), , get(0), indexOf(element),
+isEmpty(), iterator(), listIterator(), remove(1), removeAll(2,3,6), reatainAll(sublist), set(3, 42),
+subList(1,2), toArray()
+
+
+Consider using a dummy head( sometimes referred to as a sentinel) to avoid having to check for empty lists.
+This simplifies code, and makes bugs less likely.
+
+Algorithms operating on singly linked lists often benefit from using two iterators, one ahead of the other
+
+
+Two most comonly used implementations of the List interface are :
+
+ArrayList: implemented as a dynamically resized array
+LinkedList: implemented as a doubly linked list
+
+
+
+Some operatoins are much slower on ArrayList add(0, x) takes O(n) and LinkedList takes O(1)
+
+
+
+
+                  ArrayList            LinkedList
+get()               O(1)                   O(n)
+add()               O(1)                   O(1)
+remove()            O(n)                   O(n)
+
+
+
+Collections.addAll(C, 1,2,3), Collections.binarySearch(list, 42), Collections.fill(list, 'f')
+Collections.swap(C, 0, 1), Collections.min(collection), Collections.min(collection, cmp),
+Collections.max(collection), Collections.max(collection, cmp),
+Collections.reverse(list), Collections.rotate(list, 12), Collections.sort(collection), Collections.sort(collection, cmp)
+
+
+The object returned by Arrays.asList(array), is partially mutable: you can change existing entries,
+but you cannot add or delete entries. If you try you will get an UnsupportedOperationException.
+This happnes because an adapter is returned by the method.
+
+Arrays.asList( new int[] {1, 2, 3}); => adds only one elment(array)
+Arrays.asList( new Integer] {1, 2, 3}); => adds element by element. so the list will have the same elements as the array.
+Arrays.copyOf(array, array.length)
+System.arraycopy(arrayToCopiedFrom, lastIndex, arrayToReceiveCopy, startIndex, endIndex);
+
