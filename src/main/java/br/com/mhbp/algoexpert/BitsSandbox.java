@@ -3,7 +3,7 @@ package br.com.mhbp.algoexpert;
 public class BitsSandbox {
 
 
-    public static void main(String[] args) {
+    public static void main3(String[] args) {
         int a = 10;
         int b = 12;
 

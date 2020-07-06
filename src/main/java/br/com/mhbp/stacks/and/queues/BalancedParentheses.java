@@ -7,10 +7,14 @@ public class BalancedParentheses {
     public static void main(String[] args) {
         String str1 =  "[()]{}{[()()]()}";
         String str2 = "[(])";
+        String str3 = "([])(){}(())()()";
+        String str4 = "(a)";
 
 
         isBalanced(str1);
         isBalanced(str2);
+        isBalanced(str3);
+        isBalanced(str4);
     }
     private static void isBalanced(String str1) {
         LinkedList<Character> stack = new LinkedList<>();
@@ -23,12 +27,12 @@ public class BalancedParentheses {
 
     private static boolean isBalanced(String str1, LinkedList<Character> stack) {
 
-        stack.add(str1.charAt(0));
 
-        for (int i = 1; i < str1.toCharArray().length; i++) {
+        for (int i = 0; i < str1.toCharArray().length; i++) {
 
             char charAt = str1.charAt(i);
 
+            if (charAt != '(' && charAt != ')' && charAt != '[' && charAt != ']' && charAt != '{' && charAt != '}') continue;
             if (!stack.isEmpty() && isOpenAndClose(stack.peek(), charAt)) {
                 stack.pop();
             } else {
@@ -39,10 +43,10 @@ public class BalancedParentheses {
         return stack.isEmpty();
     }
 
-    private static boolean isOpenAndClose(Character peek, Character charAt) {
-        return (peek.equals('(') && charAt.equals(')'))
-                || (peek.equals('[') && charAt.equals(']'))
-                || (peek.equals('{') && charAt.equals('}'));
+    private static boolean isOpenAndClose(Character opens, Character closeds) {
+        return (opens.equals('(') && closeds.equals(')'))
+                || (opens.equals('[') && closeds.equals(']'))
+                || (opens.equals('{') && closeds.equals('}'));
     }
 
 }

@@ -1,6 +1,7 @@
 package br.com.mhbp.arrays_primitives_strings.arrays.two_pointers;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class PairWithTargetSum {
 
@@ -24,6 +25,25 @@ public class PairWithTargetSum {
                 result[0] = i;
                 result[1] = j;
                 return result;
+            } else if (sumOfPair > target) {
+                j--;
+            } else {
+                i++;
+            }
+        }
+        return null;
+    }
+
+    public static List<Integer> search(List<Integer> array, int target) {
+
+        for(int i = 0, j = array.size() - 1; i < j;) {
+            int sumOfPair = array.get(i) + array.get(j);
+
+            if (sumOfPair == target ) {
+                int[] result = new int[2];
+                result[0] = i;
+                result[1] = j;
+                return null;
             } else if (sumOfPair > target) {
                 j--;
             } else {
