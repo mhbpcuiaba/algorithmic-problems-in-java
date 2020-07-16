@@ -22,6 +22,33 @@ public class Heap {
         fixUp(size - 1);
     }
 
+    public boolean isMinHeap(int[] array) {
+        int indexLastItemNonLeaf = (array.length - 2) / 2;
+
+        for (int i = 0; i < indexLastItemNonLeaf; i++)
+            if (array[i] > array[i * 2 + 1] || array[i] > array[i * 2 + 2])
+                return false;
+
+        return true;
+    }
+
+    public boolean isvalidMaxHeap(int[] array) {
+        return isvalidMaxHeap(array, 0);
+    }
+
+    public boolean isvalidMaxHeap(int[] array, int nodeIndex) {
+        if (nodeIndex >= array.length) return true;
+
+        int leftChildIndex = nodeIndex * 2 + 1;
+        int rightChildIndex = nodeIndex * 2 + 2;
+
+        if (array[nodeIndex] < array[leftChildIndex] || array[nodeIndex] < array[rightChildIndex]) return false;
+
+        boolean leftChildIsHeap = leftChildIndex < array.length ? isvalidMaxHeap(array, leftChildIndex) : true;
+        boolean rightChildIsHeap = rightChildIndex < array.length ? isvalidMaxHeap(array, leftChildIndex) : true;
+        return leftChildIsHeap && rightChildIsHeap;
+    }
+
     public int poll() {
         if (isEmpty()) throw new IllegalStateException("heap is empty!!!");
         int max = getMax();
