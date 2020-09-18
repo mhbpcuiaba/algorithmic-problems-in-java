@@ -10,8 +10,9 @@ public class QuickSort {
 
         System.out.println("BEGIN");
         for (int i : array) {
-            System.out.println(i);
+            System.out.print(i + " ");
         }
+        System.out.println();
         System.out.println("END");
     }
 
