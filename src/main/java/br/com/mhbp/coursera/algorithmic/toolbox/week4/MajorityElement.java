@@ -1,4 +1,4 @@
-package br.com.mhbp.coursera.algorithmic.toolbox.week4;
+//package br.com.mhbp.coursera.algorithmic.toolbox.week4;
 
 import java.util.*;
 import java.io.*;
@@ -6,7 +6,7 @@ import java.io.*;
 public class MajorityElement {
 
 
-    public static void main(String[] args) {
+    public static void main_stress_test(String[] args) {
 
         Random random = new Random();
         while (true) {
@@ -124,7 +124,7 @@ public class MajorityElement {
         return -1;
     }
 
-    public static void mainOriginal(String[] args) {
+    public static void main(String[] args) {
         FastScanner scanner = new FastScanner(System.in);
         int n = scanner.nextInt();
         int[] a = new int[n];
