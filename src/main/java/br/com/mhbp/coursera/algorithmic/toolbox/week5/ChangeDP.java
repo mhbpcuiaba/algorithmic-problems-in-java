@@ -1,4 +1,4 @@
-//package br.com.mhbp.coursera.algorithmic.toolbox.week5;
+package br.com.mhbp.coursera.algorithmic.toolbox.week5;
 
 import java.util.Scanner;
 
