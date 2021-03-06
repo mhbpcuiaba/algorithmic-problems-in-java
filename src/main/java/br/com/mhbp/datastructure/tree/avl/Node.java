@@ -3,6 +3,7 @@ package br.com.mhbp.datastructure.tree.avl;
 public class Node {
 
     int data;
+    int height;
     Node left, right;
 
     public Node(int data, Node left, Node right) {

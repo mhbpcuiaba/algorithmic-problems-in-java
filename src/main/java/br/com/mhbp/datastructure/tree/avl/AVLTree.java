@@ -5,14 +5,64 @@ public class AVLTree {
     Node root;
 
     public void insert(int data) {
+        root = insert(root, data);
+    }
 
+    private Node insert(Node node, int data) {
+        if (node == null) return new Node(data);
+        if (data < node.data) node.left = insert(node.left, data);
+        else node.right = insert(node.right, data);
+
+        if (node.right == null & node.left == null) {
+            node.height = 1;
+        } else if (node.right != null & node.left != null) {
+            node.height = Math.min(node.right.height, node.left.height) + 1;
+        } else if (node.right != null) {
+            node.height = node.right.height + 1;
+        } else {
+            node.height = node.left.height + 1;
+        }
+        node = setViolation(data, node);
+        return node;
+    }
+
+    private Node setViolation(int data, Node node) {
+        int balance = getBalance(node);
+
+        //heavy left subtree, single left rotation => doubly-left heavy
+        if (balance > 1 && data < node.left.data) {
+            return rightRotation(node);
+        }
+
+        //heavy right situation
+        if (balance < -1 && data > node.right.data) {
+            return leftRotation(node);
+        }
+
+        //heavy left right
+        if (balance > 1 && data > node.left.data) {
+            node.left = leftRotation(node.left);
+            return rightRotation(node);
+        }
+
+        //heavy right left
+        if (balance < -1 && data < node.right.data) {
+            node.right = rightRotation(node.right);
+            return leftRotation(node);
+        }
+        return node;
+    }
+
+    private int getBalance(Node node) {
+        if (node == null) return 0;
+        return height(node.left) - height(node.right);
     }
 
     public void traverse() {
 
         if (root == null) return;
 
-        inOrderTrvaerse(root);
+        inOrderTraverse(root);
     }
 
     public int height(Node node) {
@@ -26,14 +76,87 @@ public class AVLTree {
         return Math.abs(balance(n.left) - balance(n.right));
     }
 
-    private void inOrderTrvaerse(Node node) {
+    private void inOrderTraverse(Node node) {
         if (node != null) {
-            inOrderTrvaerse(node.left);
+            inOrderTraverse(node.left);
             System.out.print(node.data + " ");
-            inOrderTrvaerse(node.right);
+            inOrderTraverse(node.right);
         }
     }
 
+    private Node rightRotation(Node node) {
+        System.out.println("Rotating to right node: " + node);
+        Node tmpLeftNode = node.left;
+        Node t = tmpLeftNode.right;
+        tmpLeftNode.right = node;
+        node.left = t;
+        node.height = Math.max(height(node.left), height(node.right)) + 1;
+        tmpLeftNode.height = Math.max(height(tmpLeftNode.left), height(tmpLeftNode.right)) + 1;
+        return tmpLeftNode;
+    }
+
+    private Node leftRotation(Node node) {
+        System.out.println("Rotating to left on node " + node);
+        Node tmpRightNode = node.right;
+        Node t = tmpRightNode.left;
+        tmpRightNode.left = node;
+        node.right = t;
+        node.height = Math.max(height(node.left), height(node.right)) + 1;
+        tmpRightNode.height = Math.max(height(tmpRightNode.left), height(tmpRightNode.right)) + 1;
+        return tmpRightNode;
+    }
+
+    public Node remove(int nodeValue) {
+        return remove(root, nodeValue);
+    }
+
+    private Node remove(Node node, int nodeValue) {
+        if(node == null) return node;
+
+        if (nodeValue > node.data)
+            return remove(node.right, nodeValue);
+        else if (nodeValue < node.data)
+            return remove(node.left, nodeValue);
+        else { //we found the node we wanna remove it
+
+            if(node.left == null && node.right == null) {
+                node = null; //???
+                return null;
+            }
+
+            if (node.left == null) {
+                Node tmpRight = node.right;
+                node = null;
+                return tmpRight;
+            }
+
+            if (node.right == null) {
+                Node tmpLeft = node.left;
+                node = null;
+                return tmpLeft;
+            }
+
+            //removing node with two children
+
+            Node predecessor = getPredecessor(node.left);
+            node.data = predecessor.data;
+            node.left = remove(node.left, predecessor.data);
+
+
+            node.height = Math.max(node.left.height, node.right.height) + 1;
+            return node;
+        }
+    }
+
+    private Node getPredecessor(Node left) {
+        return null;
+    }
+    /*
+    when removing a node we have three possible cases
+        1- The node we wanna get rid of is a leaf node
+        2- The node we wanna get rid of has a single child
+        3- The node we wanna get rid of has two children
+     */
 }
 /**
 
