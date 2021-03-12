@@ -1,5 +1,12 @@
 
 
+
+
+
+docker run -p 8080:8080 in28min/hello-world-rest-api:0.0.1.RELEASE
+
+var cache debconf config.dat is locked by another process
+
 Principle of Secure Coding
 
     cohesion, specific function for specific needs to disambiguate
