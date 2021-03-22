@@ -1,0 +1,146 @@
+What is shifting? #
+A bit shift is a Bitwise operation where the order of a series of bits is moved, either to the left or right, to efficiently perform a mathematical operation.
+
+A bit shift moves each digit in a number’s binary representation left or right. The bit-shifting operators do precisely what their name implies. They shift bits. Here is a brief introduction to the different shift operators.
+
+Types #
+There are three main types of shifts:
+
+Left shift: << is the left shift operator and meets both logical and arithmetic shifts’ needs.
+Arithmetic/signed right shift: >> is the arithmetic (or signed) right shift operator.
+Logical/unsigned right shift: >>> is the logical (or unsigned) right shift operator.
+Note: <<< is not an operator because it would be redundant.
+
+These operators can be applied to integer values int, long, short, byte or char.
+
+In some languages, applying the shift operators to any datatype smaller than int automatically resizes the operand to be an int.
+
+
+Left shift #
+The left shift operator is written as <<.
+
+Integers are stored in memory as a series of bits. For example, the number 6 stored as a 32-bit int would be:
+
+6 = 00000000 00000000 00000000 00000110
+Shifting this bit pattern to the left one position (6 << 1) would result in the number 12:
+
+ 6 << 1 = 00000000 00000000 00000000 00001100
+As you can see, the digits have shifted to the left by one position, and the last digit on the right is filled with a zero. You might also note that shifting left is equivalent to multiplication by powers of 2.
+
+So,
+
+6 << 1 → 6 * 2^1 → 6 * 2
+6 << 3 → 6 * 2^3 → 6 * 8
+A good optimization compiler will replace multiplications with shifts when possible.
+
+32-bit representation
+
+00000000 00000000 00000000 00000010 << 1  →  00000000 00000000 00000000 00000100
+
+4-bit representation
+
+0010 << 2  →  1000
+A single left shift multiplies a binary number by 2, as seen above.
+
+0010 << 1  →  0100
+
+0010 is 2
+0100 is 4
+So, in simple terms, << (left shift) takes two numbers, left shifts the bits of the first operand, and the second operand decides the number of places to shift.
+
+Let’s see how to represent this in a mathematical formula.
+
+Formula #
+a << b = ( a * 2^{b}2
+​b
+​​  )
+
+
+
+Logical right shift (>>>) #
+The logical right shift operator is written as >>>.
+
+Integers are stored in memory as a series of bits. For example, the number 12 stored as a 32-bit int would be:
+
+12 = 00000000 00000000 00000000 00001100
+When we shift it one position (12 >>> 1) the answer is 6.
+
+12 >>> 1 = \frac{12}{2^1}
+​2
+​1
+​​
+​
+​12
+​​  = \frac{12}{2}
+​2
+​
+​12
+​​  = 6.
+
+The binary representation of the number 6 is as follows.
+
+(12 >>> 1) = 00000000 00000000 00000000 00000110
+Let’s see how to represent this in a mathematical formula.
+
+Formula #
+a >>> b = \frac{a}{2^b}
+​2
+​b
+​​
+​
+​a
+​​
+
+Arithmetic right shift (>>) #
+Right shift #
+The right shift operator is written as >>.
+
+Integers are stored in memory as a series of bits. For example, the number 6 stored as a 32-bit int would be:
+
+6 = 00000000 00000000 00000000 00000110
+Shifting this bit pattern to the right one position (6 >> 1) would result in the number 3:
+
+ 6 >> 1 = 00000000 00000000 00000000 00000011
+As you can see, the digits have shifted to the right by one position, and the last digit on the left is filled with a zero. You might also note that shifting right is equivalent to dividing by powers of 2.
+
+So,
+
+6 >> 1 => \frac{6}{2^1}
+​2
+​1
+​​
+​
+​6
+​​  = \frac{6}{2}
+​2
+​
+​6
+​​  = 3
+
+6 >> 3 => \frac{6}{2^3}
+
+
+A good optimization compiler will replace division with shifts when possible.
+
+1011 >> 1  →  1101
+1011 >> 3  →  1111
+
+0011 >> 1  →  0001
+0011 >> 2  →  0000
+The first two numbers had a 1 as the most significant bit, so more 1's were inserted during the shift. The last two numbers had a 0 as the most significant bit, so the shift inserted more 0's.
+
+If a number is encoded using two’s complement, then an arithmetic right shift preserves the number’s sign, while a logical right shift makes the number positive.
+
+// Arithmetic shift
+1011 >> 1  →  1101
+    1011 is -5
+    1101 is -3
+So in simple terms, >> (right shift) takes two numbers, right shifts the bits of the first operand, the second operand decides the number of places to shift.
+
+Let’s see how to represent this in a mathematical formula.
+
+Formula #
+x >> y = \frac{x}{2^{y}}
+
+
+
