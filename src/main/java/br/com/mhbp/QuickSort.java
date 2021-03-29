@@ -2,6 +2,28 @@ package br.com.mhbp;
 
 import java.util.Arrays;
 
+/*
+* SOPZHRGQ
+*   macos henrique, sou cuiabano, mas moro em sao paulo ha 11 anos.
+*  tenho 38 anos, moro com minha esposa e filho, temos um peixe e uma gata
+*
+* *   hobby: academia, corrida de rua, joga futebol, tocar violao,
+ *               ler livros, assistir filmes/series
+ *
+ *       tb gosoto mt de natureza, em e4special praia e parques
+ *
+ *     na minha ultima empresa foi a prevent senior,
+*        estava no cargo de arquiteto de software
+*
+*     trabalho com desenvolvim  ento dsde 2005
+*      Tenho foco no backend, ja trablhei com algumas linguagens como: php, delphi, nodejs, ruby, java
+*     Mas com foco especial para java. E tenho interesse em programacao paralela/concorrente/distribuida
+*       e algoritmos e estrutura de dados
+*
+*
+*    espero fazer novos amigos, e ajudar a CI&T na transformacao digital em seus clientes
+*    estava trab
+* */
 public class QuickSort {
 
     public static int[] quickSort(int[] array) {
