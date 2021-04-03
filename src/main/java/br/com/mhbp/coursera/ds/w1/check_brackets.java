@@ -1,4 +1,4 @@
-//package br.com.mhbp.coursera.ds.w1;
+package br.com.mhbp.coursera.ds.w1;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
