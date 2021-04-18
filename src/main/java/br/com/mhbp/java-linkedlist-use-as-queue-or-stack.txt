@@ -1,0 +1,29 @@
+
+#Queue
+
+    A LinkedList is already a queue, since it implements the Queue interface (and check the Javadoc yourself).
+    Hence it has the following queue operations:
+
+    enqueue:
+
+        add() - Appends the specified element to the end of this list.
+    dequeue:
+
+        remove() - Retrieves and removes the head (first element) of this list.
+
+#Stack
+
+
+    It is also very easy to use a LinkedList as a stack,
+    since it has a method removeLast() which can remove an item from the end of the list
+    (rather than the start, which remove() does:
+
+    push:
+
+        add() - Appends the specified element to the end of this list.
+
+    pop:
+
+        removeLast() - Removes and returns the last element from this list.
+        Appending and removing always from the end of the list simulates a stack,
+        which is a FIFO (first in first out) data structure.
